@@ -1,0 +1,13 @@
+version: '2.2'
+volumes:
+  data:
+services:  
+  db:
+    image: mysql:latest
+    ports:
+      - "3306:3306"
+    volumes:
+      - data:/var/lib/mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=password
+      - MYSQL_DATABASE=springjdbc

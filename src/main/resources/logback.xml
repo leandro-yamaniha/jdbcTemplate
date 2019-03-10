@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+	<appender name ="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+			<Pattern>
+				%X{session} %d{yyyy-MM-dd_HH:mm:ss.SSS} %logger{36} %-5level %msg %n 
+			</Pattern>
+		</encoder>
+	</appender>
+	
+	<logger name="org.springframework.jdbc" level="TRACE,DEBUG,ERROR,INFO" additivity="false">
+		<appender-ref ref="STDOUT" />
+	</logger>
+	
+	
+	<logger name="org.springframework.jdbc.DataSourceTransactionManager" level="DEBUG" additivity="false">
+		<appender-ref ref="STDOUT" />
+	</logger>
+	
+	<logger name="org.springframework.transaction.interceptor" level="TRACE" additivity="false">
+		<appender-ref ref="STDOUT" />
+	</logger>
+	
+	<logger name="org.springframework.jdbc.core.JdbcTemplate" level="DEBUG" additivity="false">
+	  <appender-ref ref="STDOUT" />
+	</logger>
+	
+	<logger name="org.springframework.jdbc.core.StatementCreatorUtils" level="TRACE" additivity="false">
+		<appender-ref ref="STDOUT" />
+	</logger>
+	
+
+	<logger name="org.springframework" level="INFO" >
+		<appender-ref ref="STDOUT" />
+	</logger>
+	
+	<logger name="com.yamaniha" level="INFO" >
+		<appender-ref ref="STDOUT" />
+	</logger>
+	
+	
+</configuration>

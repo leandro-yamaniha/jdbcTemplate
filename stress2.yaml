@@ -1,0 +1,14 @@
+config:
+  target: "http://localhost:8080"
+  phases:
+    - duration: 60
+      arrivalRate: 10
+scenarios:
+  - name: "Integracao REQUIRED"
+    flow:
+      - post:
+          url: "/integracao"
+          headers:
+            Content-Type: "application/json"
+          json:
+            info: ["a"]
